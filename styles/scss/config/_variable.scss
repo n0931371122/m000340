@@ -1,0 +1,28 @@
+$red:#ED1C24;
+$redCD162A:#CD162A;
+$purple:#3B266B;
+$gray494949:#494949;
+$grayB2B2B2:#B2B2B2;
+$gray808080:#808080;
+$gray7F7F7F:#7F7F7F;
+$grayF7F7F7:#F7F7F7;
+$gray848484:#848484;
+$gray606060:#606060;
+$grayD1D1D1:#D1D1D1;
+$gray737373:#737373;
+$gray32323205:rgba(32,32,32,0.5);
+
+
+
+
+$green6FBA44:#6FBA44;
+$green0BBD6E:#0BBD6E;
+$green006938:#006938;
+$black:#141414;
+$blue:#04529B;
+$lightBlue:#0EB8EC;
+$gray646464:#646464;
+$grayC8C8C8:#C8C8C8;
+@mixin fz($size) {
+  font-size: $size;
+}

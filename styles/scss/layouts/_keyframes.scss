@@ -1,0 +1,47 @@
+@keyframes radarWave{
+	0% {
+        transform: translate(-50%, -50%) scale(0.9);
+	}
+	50% {
+		transform:translate(-50%, -50%)  scale(1) ;
+	}
+	100% {
+	 	transform:translate(-50%, -50%)  scale(0.9) ;
+	}
+}
+@keyframes zoom{
+	0% {
+        transform:  scale(0.97);
+	}
+	50% {
+		transform:  scale(1);
+	}
+	100% {
+	 	transform:  scale(0.97);
+	}
+}
+@keyframes upDown{
+	0% {
+        transform: translateY(20px);
+	}
+	50% {
+		transform:  translateY(0px);
+	}
+	100% {
+	 	transform:  translateY(20px);
+	}
+}
+@keyframes radarWave{
+	0% {
+	    opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+	}
+	5% {
+         background: rgba(175,144,106,0.2);
+        opacity: 1;
+	}
+	100% {
+	 	transform:translate(-50%, -50%)  scale(1) ;
+	 	 background: rgba(158,125,84,0);
+	 }
+}

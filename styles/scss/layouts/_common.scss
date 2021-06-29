@@ -1,0 +1,22 @@
+.banner{
+    &.banner-style-1{
+        height: 503px;
+    }
+}
+
+
+
+.green-dot{
+    position: relative;
+    &::before{
+        content:"";
+        display: block;
+        width: 4px;
+        height: 4px;
+        background: $green6FBA44;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+}

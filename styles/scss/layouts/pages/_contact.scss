@@ -1,0 +1,83 @@
+#contact{
+    .bg{
+        height: 970px;
+        top: 0;
+    } 
+    .bootstrap-select{
+        height: 26px;
+        line-height: 22px;
+        &.changed{
+            .dropdown-toggle{
+                color: black;
+            }
+        }
+        &.firstHide .dropdown-menu li:nth-child(1){
+            display: none;
+        }
+        .dropdown-toggle{
+            padding: 0 0 0 16px;
+            background: transparent;
+            border:0;
+            outline: 0 !important;
+            box-shadow: none !important;
+            color:#969696;
+            &::after{
+                border-top: 0.5em solid black;
+                border-right: 0.5em solid transparent;
+                border-bottom: 0;
+                border-left: 0.5em solid transparent;
+            }
+        }
+        .dropdown-menu:not(.inner){
+            margin-top: 16px;
+            padding: 0;
+            background: #0BBD6E;
+            .inner{
+                background: transparent;
+            }
+            .dropdown-item{
+                color:white;
+                padding: 10px 16px;
+                transition:background .3s ;
+                &.active,
+                &:active{
+                    background:#0BBD6E;
+                }
+                &:hover{
+                    background:#0AAB64;
+                }
+            }
+        }
+    }
+    label{
+        flex:0 0 85px;
+    } 
+    footer{
+        margin-top: -90px;
+        .top-section{
+            height: 460px;
+            padding-top: 90px;
+        }
+    }
+    @media(max-width:767px){
+        .bootstrap-select .dropdown-toggle::after{
+            border-top: 0.3em solid black;
+            border-right: 0.3em solid transparent;
+            border-bottom: 0;
+            border-left: 0.3em solid transparent;
+        }
+        .verificationCode{
+            flex-wrap: wrap;
+            label{
+                flex:0 0 100%;
+            }
+        }
+        footer{
+            margin-top: -40px;
+            .top-section{
+                height: auto;
+                padding-top: 40px;
+            }
+        }
+    }
+}

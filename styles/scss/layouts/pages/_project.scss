@@ -1,0 +1,202 @@
+#project{
+    .bg{
+        top: 0;
+        min-height: 500px;
+    }
+    footer{
+        margin-top: -90px;
+        .top-section{
+            height: 460px;
+            padding-top: 90px;
+        }
+    }
+    .dec{
+        min-height: 1040px;
+        background-color: #EEEEEE;
+        &.background-size-contain{
+            background-size: contain !important;
+        }
+    }
+    .building-infos{
+        padding-left: 48px;
+        padding-right: 26px;
+
+        .building-info{ 
+            >div{
+                >span{
+                    &:nth-child(1){
+                        position: relative;
+                        padding-left: 37px;
+                        flex:0 0 172px;
+                        &::before{
+                            content:"";
+                            display: block;
+                            position: absolute;
+                            left: 0;
+                            top: 12px;
+                            width: 18px;
+                            height: 2px;
+                            background: #0BBD6E;
+                        }
+                    }
+                }
+                a{
+                    right: 0;
+                    top:-7px;
+                    
+                    i{
+                        &::before{
+                             transition:transform .3s;
+                        }
+                       
+                    }
+                    &:hover{
+                        i{
+                            &::before{
+                                transform: scale(1.1);
+                            }
+                            
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+    .swiper-container{
+        width: 452px;
+        margin-left: 0;
+        .jqimgFill{
+            height: 140px;
+            width: 140px;
+        }
+        .swiper-slide{
+            position: relative;
+            &::after{
+                content:"";
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: black;
+                top: 0;
+                left: 0;
+                opacity: 0.5;
+                transition: opacity .3s;
+                pointer-events: none;
+            }
+            &.swiper-slide-active{
+                &::after{
+                    opacity: 0;
+                }
+            }
+        }
+        .swiper-buttons{
+            &::after{
+                content:"";
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                width: 1px;
+                height: 20px;
+                background:#DCDCDC ;
+            }
+        }
+        .swiper-button{
+            position: static;
+            margin: 0;
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    &~.fancybox__container{
+        .fancybox__slide{
+            padding: 45px 60px;
+        }
+    }
+    @media (max-width:1600px){
+        .building-infos{
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .dec{
+           min-height: 100%;
+        }
+    }
+    @media (max-width:1199px){
+        .building-infos .building-info > div > span:nth-child(1){
+            flex:0 0 130px;
+        }
+        .swiper-container{
+            width: auto;
+            .jqimgFill{            
+                width: auto;
+                height: 120px;
+            }
+        }
+    }
+    @media (max-width:991px){
+        .dec{
+           min-height: initial;
+           height: 1000px;
+        }
+        .swiper-container{
+            .jqimgFill{            
+                height: 600px;
+            }
+        }
+
+    }
+    @media (max-width:767px){
+        .building-infos .building-info > div{
+            >span:nth-child(2){
+                padding-left: 37px;
+            }
+            >div{
+                padding-left: 37px;
+            }
+        }
+        .swiper-container{
+            .jqimgFill{            
+                height: auto;
+                background: transparent;
+                img{
+                    display: block !important;
+                }
+            }
+        }
+        &~.fancybox__container{
+            .carousel__button{
+                &.is-prev{
+                    left: 0;
+                }
+                &.is-next{
+                    right: 0;
+                }               
+            }
+            .font-40{
+                font-size: 20px;
+            }
+        }
+        footer{
+            margin-top: -40px;
+            .top-section{
+                height: auto;
+                padding-top: 40px;
+            }
+        }
+    }
+    @media (max-width:575px){
+        .swiper-container{
+            .jqimgFill{            
+                height: auto;
+                img{
+                    display: block !important;
+                }
+            }
+        }
+    }
+}

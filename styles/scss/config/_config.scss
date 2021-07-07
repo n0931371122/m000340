@@ -10,7 +10,13 @@
 .Oswald{
   font-family: "Oswald";
 }
+.roboto{
+  font-family: "roboto";
+}
 //width height 相關
+.w-0{
+  width: 0;
+}
 .w40{
   width: 40px;
 }
@@ -23,14 +29,52 @@
 .h50{
   height: 50px;
 }
+.w60{
+  width: 60px;
+}
+.h60{
+  height: 60px;
+}
 .max415{
   max-width: 415px;
 }
-.max480{
-  max-width: 480px;
+.max495{
+  max-width: 495px;
 }
 .max600{
   max-width: 600px;
+}
+.max700{
+  max-width: 700px;
+  margin: auto;
+}
+.max777{
+  max-width: 777px;
+  margin: auto;
+}
+.max940{
+  max-width: 940px;
+  margin: auto;
+}
+.max1000{
+  max-width: 1000px;
+  margin: auto;
+}
+.max1120{
+  max-width: 1120px;
+  margin: auto;
+}
+.max1128{
+  max-width: 1128px;
+  margin: auto;
+}
+.max1180{
+  max-width: 1180px;
+  margin: auto;
+}
+.max1200{
+  max-width: 1200px;
+  margin: auto;
 }
 .max1400{
   max-width: 1400px;
@@ -46,6 +90,10 @@
 }
 .max1520{
   max-width: 1520px;
+  margin: auto;
+}
+.max1560{
+  max-width: 1560px;
   margin: auto;
 }
 .h-50{
@@ -72,7 +120,6 @@
 }
 
 //z-index 相關
-
 .z-1{
   z-index: 1;
 }
@@ -82,13 +129,6 @@
 .z-3{
   z-index: 3;
 }
-.z-4{
-  z-index: 4;
-}
-
-//overflow 相關
-
-
 //bg
 .bg-green6FBA44{
   background: $green6FBA44;
@@ -99,24 +139,40 @@
 .bg-green0BBD6E{
   background: $green0BBD6E;
 }
+.bg-grayF0F0F0{
+  background: #F0F0F0;
+}
 .bg-black{
   background: $black;
 }
 .bg-blue{
   background: $blue;
 }
-
-
+.bg-grayDCDCDC{
+  background: #DCDCDC;
+}
 .bg-hover-white{
   transition: all .3s;
   &:hover{
-    background: white;
+    background: white !important;
   }
 }
-
-//font-weight 相關
-
+.bg-hover-blue055DAE{
+  transition: all .3s;
+  &:hover{
+    background: $blue055DAE !important;
+  }
+}
+.bg-hover-green0BBD6E{
+  transition: all .3s;
+  &:hover{
+    background: $green0BBD6E !important;
+  }
+}
 //color 相關
+.text-white08{
+  color:rgba(255,255,255,0.8);
+}
 .text-white05{
   color:rgba(255,255,255,0.5);
 }
@@ -132,8 +188,14 @@
 .text-blue{
   color:$blue;
 }
+.text-blue055DAE{
+  color:$blue055DAE;
+}
 .text-lightBlue{
   color:$lightBlue;
+}
+.text-green0BBD6E{
+  color:$green0BBD6E;
 }
 .text-gray646464{
   color:$gray646464;
@@ -141,10 +203,38 @@
 .text-gray32323205{
   color:$gray32323205;
 }
+.text-gray969696{
+  color:$gray969696;
+}
+.text-grayCDCDCD{
+  color:$grayCDCDCD;
+}
+.text-grayB4B4B4{
+  color:#B4B4B4;
+}
 .text-hover-gray646464{
   transition: all .3s;
   &:hover{
     color:$gray646464 !important;
+  }
+}
+
+.text-hover-green0BBD6E{
+  transition: all .3s; 
+  &:hover{
+    color:$green0BBD6E !important;
+  }
+}
+.text-hover-blue055DAE{
+  transition: all .3s; 
+  &:hover{
+    color:$blue055DAE !important;
+  }
+}
+.text-hover-white{
+  transition: all .3s;
+  &:hover{
+    color:white !important;
   }
 }
 //border
@@ -157,11 +247,33 @@
 .border-blue{
   border:1px solid $blue;
 }
+.border-blue055DAE{
+  border:1px solid $blue055DAE;
+}
 .border-grayC8C8C8{
   border:1px solid $grayC8C8C8; 
 }
+.border-grayCDCDCD{
+  border:1px solid $grayCDCDCD; 
+}
 .border-green0BBD6E{
   border:1px solid $green0BBD6E; 
+}
+
+.border-bottom-DCDCDC{
+  border-bottom:1px solid #DCDCDC;
+}
+.border-bottom-D8D8D8{
+  border-bottom:1px solid #D8D8D8;
+}
+.border-top-black{
+  border-top:1px solid black;
+}
+.border-top-DCDCDC{
+  border-top:1px solid #DCDCDC;
+}
+.border-bottom-black{
+  border-bottom:1px solid black;
 }
 .border-hover-grayC8C8C8{
   transition: all .3s;
@@ -169,12 +281,18 @@
     border:1px solid $grayC8C8C8;
   }
 }
-//rounded 相關
-.rounded-5{ 
-  border-radius: 5px;
+.border-hover-green0BBD6E{
+  transition: all .3s;
+  &:hover{
+    border:1px solid $green0BBD6E !important;
+  }
 }
+//rounded 相關
 .rounded-10{ 
   border-radius:10px;
+}
+.rounded-20{ 
+  border-radius:20px;
 }
 .rounded-30{ 
   border-radius: 30px;
@@ -187,26 +305,23 @@
   transform: translate(-50%,-50%);
 }
 .position-lg-absolute{
-  @media (min-width:991px){
+  @media (min-width:992px){
+    position: absolute !important;
+  }
+}
+.position-md-absolute{
+  @media (min-width:768px){
     position: absolute !important;
   }
 }
 .position-xl-absolute{
-  @media (min-width:1199px){
+  @media (min-width:1200px){
     position: absolute !important;
-  }
-}
-.position-md-static{
-  @media (min-width:768px){
-    position: static !important;
   }
 }
 // flex 相關
 .flex-grow{ 
   flex-grow: 1;
-}
-.flex-shrink-0{
-  flex-shrink: 0;
 }
 .flex-center{
   display: flex;
@@ -235,6 +350,11 @@
     justify-content: flex-start;
   }
 }
+.flex-md-justify-start{
+  @media (min-width:767px){
+    justify-content: flex-start;
+  }
+}
 .align-center{
   align-items: center;
 }
@@ -254,12 +374,35 @@
   &.g-1{
     margin-left: -5px;
     margin-right: -5px;
-    [class^=col-]{
+    [class^=col]{
       padding-left: 5px;
       padding-right: 5px;
     }
   }
-
+  &.g-2{
+    margin-left: -10px;
+    margin-right: -10px;
+    [class^=col]{
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  &.g-3{
+    margin-left: -21px;
+    margin-right: -21px;
+    [class^=col]{
+      padding-left: 21px;
+      padding-right: 21px;
+    }
+    @media(max-width:1400px){
+      margin-left: -15px;
+      margin-right: -15px;
+      [class^=col]{
+        padding-left: 15px;
+        padding-right: 15px;
+      } 
+    }
+  }
 }
 
 //其他
@@ -267,7 +410,7 @@
   padding-right: 40px;
   padding-left: 40px;
   @media(max-width:767px){
-    padding-right: 20px;
+    padding-right: 20px; 
     padding-left: 20px;
   }
 }
@@ -290,27 +433,21 @@
 .point-event-all{
   pointer-events: all;
 }
-
+.les0{
+  letter-spacing: 0;
+}
 .les06{
   letter-spacing: 0.6px;
-}
-.les1{
-  letter-spacing: 1px;
-}
-.les2{
-  letter-spacing: 2px;
-}
-.opacity01{
-  opacity: 0.1;
-}
-.opacity02{
-  opacity: 0.2;
 }
 .background-cover{
   background-size: cover;
   background-position: center;
 }
-
+.line1{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .line2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -334,4 +471,40 @@
 .mycol-5 {
   flex: 0 0 62.5%;
   max-width: 62.5%;
+}
+.font-weight-500{
+  font-weight: 500;
+}
+.blue-decLine{
+  position: relative;
+  &::before,
+  &::after{
+    content:"";
+    display: block;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;   
+  }
+  &::before{
+    z-index: 1;
+    width: 40px;
+    background: #04529B;
+  }
+  &::after{
+    width: 80px;
+    background: #0EB8EC;
+  }
+  @media(max-width:767px){
+    &::before{
+      width: 20px;
+    }
+    &::after{
+      width: 40px;
+    }
+  }
+}
+.list-style-decimal{
+  list-style-type: decimal;
+  padding-left: 22px;
 }

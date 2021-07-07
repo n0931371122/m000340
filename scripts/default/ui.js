@@ -1,9 +1,7 @@
 'use strict';
 $(function (){
 
-    var windowW=$(window).innerWidth(),
-        mobileMode,
-        headerH=$("header").height();
+    var windowW,mobileMode;
     $(".jqimgFill").imgLiquid();
     imgFill();
     /* ==========================================================================
@@ -13,7 +11,7 @@ $(function (){
         $(".menu-toggle").click(function () {
             $("html").toggleClass("menuOpen");
         });
-        $("header .bg").click(function () {
+        $("header .mask").click(function () {
             $("html").removeClass("menuOpen");
         });
     });
@@ -29,7 +27,7 @@ $(function (){
 		[page]
      ==========================================================================*/
 
-     $("#index").each(function(){
+    $("#index").each(function(){
         new Swiper ('.index-banner .swiper-container',{
             loop: true, 
             speed:1200,
@@ -45,6 +43,10 @@ $(function (){
         }) 
         new Swiper ('.index-section-1 .swiper-container',{
             loop: true, 
+            effect:'fade',
+            fadeEffect: {
+                crossFade: true
+            },
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
@@ -65,27 +67,112 @@ $(function (){
             }
         }) 
     });
-
-
-    /* ==========================================================================
-		[共用]
-     ==========================================================================*/
-    if($(".links").length>0){
-        $(".links ul li").eq($(".wp").data("target")).find("a").addClass("active");
-    }
-    $(".banner-text-hide").each(function(){
-        $(window).scroll(function(){
-            if($(window).scrollTop()>20){
-                $(".banner .font-165").addClass("hide");
+    $("#about").each(function(){
+        var url = location.href;
+        if (url.indexOf('?') != -1) {
+            var nav = url.split('?')[1].split('=')[1];
+            if(nav==2){
+                $(window).scrollTop($(".about-section-2").offset().top);
             }
+            else if(nav==3){
+                $(window).scrollTop($(".about-section-3").offset().top);
+            }
+        } 
+    });
+    $("#news").each(function(){
+        new Swiper ('.swiper-container',{
+            loop: true, 
+            slidesPerView: 1,
+            centeredSlides:true,
+            centeredSlidesBounds:true,
+            speed:1000,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView:1.3,
+                },
+                1200: {
+                    slidesPerView: 2.16,
+                },
+            }
+        }) 
+    });
+    $("#methods").each(function(){
+        $(".links .toggle").click(function(){
+            $(this).toggleClass("show").next().stop().slideToggle();
         });
     });
-    $("header .menu a").hover(function(){
-        $("header").addClass("menuHoverMode");
-    },function(){
-        $("header").removeClass("menuHoverMode");
+    $("#projects").each(function(){
+        if(windowW<=1199){
+            $(".item").removeAttr("data-aos-delay");
+        }
     });
+    $("#project").each(function(){
+        new Swiper ('.swiper-container',{
+            loop: true, 
+            slidesPerView: 1,
+            centeredSlides:true,
+            centeredSlidesBounds:true,
+            speed:500,
+            spaceBetween:24,
+            autoHeight:true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            breakpoints: {
+                768: {
+                    spaceBetween:24,
+                    slidesPerView: 1.4,
+                    height:140,
+                },
+                992: {
+                    spaceBetween:16,
+                    slidesPerView: 3
+                },
+            }
+        }) 
+        Fancybox.bind('[data-fancybox="gallery"]', {
+            closeButton: "top",
+            changeSpeed:2000,
+            Thumbs: false,
+            Image: {
+                click: "close",
+                wheel: "slide",
+                zoom: false,
+            },
+            Carousel:{
+                friction: 0,
+            },
+            on: {
+                initCarousel:(fancybox)=>{
+                    console.log(fancybox.$closeButton);
+                    $(fancybox.$carousel).find(".is-prev").html("<i class='icon-prev text-hover-green0BBD6E font-40'></i>");
+                    $(fancybox.$carousel).find(".is-next").html("<i class='icon-next text-hover-green0BBD6E font-40'></i>");
+                    $(fancybox.$closeButton).html("<i class='icon-close text-hover-green0BBD6E font-24'></i>");
+                },
 
+            },
+
+        });
+    });
+    $("#contact").each(function(){
+        $('main .selectpicker').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+            $("main .bootstrap-select").addClass("changed");
+        });
+
+    });
     aosInit();
     /* ==========================================================================
 		[resize]
@@ -95,29 +182,11 @@ $(function (){
         windowW=$(window).innerWidth();
         windowW<992?mobileMode=true:mobileMode=false;
         if(mobileMode){
-             $("footer .info").append($("footer .author").detach());
+             $("footer .info").append($("footer .logo-wrapper .max415 .author").detach());
         }
         else{
-            $("footer .logo-section .max415").append($("footer .author").detach());
+            $("footer .logo-wrapper .max415").append($("footer .info .author").detach());
         }
-        $("#product").each(function(){
-            if(mobileMode){
-               
-                $(".product").prepend($(".title").detach());
-            }
-            else{
-                $(".title-next-dot").before($(".title").detach())
-            }
-        });
-
-        var trigger_size = [576];
-        trigger_size.forEach(function (ele) {
-            if (windowW > ele) {
-                $(window).width() <= ele ? location.reload() : "";
-            } else {
-                $(window).width() > ele ? location.reload() : "";
-            }
-        });
     }
     $(window).resize(function(){
         resize();

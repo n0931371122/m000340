@@ -1,0 +1,89 @@
+.editor{
+    .about-section-1{
+        .boss{
+            width: 55%;
+        }
+        .bg-white{
+            width: 53.5%;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+        }
+        .spirit{      
+            .icon{
+                flex:0 0 70px;
+                height: 70px;
+            }
+            .title{
+                flex:0 0 180px;
+            }
+            .content{
+                border-bottom:1px solid $blue;
+            }
+        }
+    }
+    .about-section-2{
+        .items{
+            background-position-x: 66%;
+            clip-path: polygon(0 0, 100% 17%, 100% 100%, 0 87%);
+        }
+    }
+    @media(max-width:1199px){
+        .about-section-2 .items{
+            clip-path: polygon(0 0, 100% 7%, 100% 100%, 0 93%);
+        }
+    }
+    @media(max-width:991px){
+        .about-section-1{
+            .bg-white{
+                transform: none;
+                top: 50px;
+            }
+        }
+        .about-section-2{
+            .items{
+                transform: rotateY(180deg);
+                background-position-x: center;
+                clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+                &::after{
+                    content:"";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.4);
+                }
+                >div{
+                    transform: rotateY(180deg);
+                }
+            }
+        }
+    }
+    @media(max-width:767px){
+        .about-section-1{
+            .boss{
+                width: 100%;
+            }
+            .bg-white{
+                width: 100%;
+                box-shadow: 0px 5px 15px rgb(0,0,0,0.1);
+            }
+        }
+        .about-section-2{
+            .items{
+                transform: none;
+                clip-path: polygon(0 0, 100% 4%, 100% 100%, 0 96%);
+                background-position-x: 20%;
+                &::after{
+                    background: rgba(0,0,0,0.6);
+                }
+                >div{
+                    transform: none;
+                }
+            }
+        }
+    }
+}

@@ -18,23 +18,19 @@
 <meta name="format-detection" content="telephone=no">
 <link rel="shortcut icon" type="image/x-icon" href="styles/images/web-icon.ico" />
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Kanit&family=Lato:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&family=Oswald:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kanit&family=Roboto:wght@700&Lato:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&family=Oswald:wght@400&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="styles/style.css" />
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "url": "https://html.m000330.24241872.tw",
-        "name": "華元食品",
-        "legalName": "華元食品",
-        "logo": "https://html.m000330.24241872.tw/styles/images/web-icon.ico",
-        "sameAs": [
-
-
-        ],
+        "url": "https://html.m000340.24241872.tw",
+        "name": "同興營造",
+        "legalName": "同興營造",
+        "logo": "https://html.m000340.24241872.tw/styles/images/web-icon.ico",
         "contactPoint": [{
             "@type": "ContactPoint",
-            "telephone": "+886-800-234123",
+            "telephone": "+886-2-8258-9112",
             "contactType": "customer service",
             "contactOption": "TollFree",
             "areaServed": "TW",
